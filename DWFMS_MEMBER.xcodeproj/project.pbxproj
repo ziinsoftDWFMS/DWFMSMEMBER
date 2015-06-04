@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		57E944C11B20A69800FDC462 /* DwfmsSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E944BD1B20A69800FDC462 /* DwfmsSegue.m */; };
+		57E944C21B20A69800FDC462 /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E944BF1B20A69800FDC462 /* CameraViewController.m */; };
+		57E944C71B20A6BC00FDC462 /* QRCodeScanLine@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 57E944C41B20A6BC00FDC462 /* QRCodeScanLine@2x.png */; };
+		57E944C81B20A6BC00FDC462 /* ZIINQRCodeReaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E944C61B20A6BC00FDC462 /* ZIINQRCodeReaderView.m */; };
+		57E944CB1B20A6CF00FDC462 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 57E944CA1B20A6CF00FDC462 /* Icon.png */; };
+		57E944D41B20A6EA00FDC462 /* CallServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E944CD1B20A6EA00FDC462 /* CallServer.m */; };
+		57E944D51B20A6EA00FDC462 /* GlobalData.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E944CF1B20A6EA00FDC462 /* GlobalData.m */; };
+		57E944D61B20A6EA00FDC462 /* GlobalDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E944D11B20A6EA00FDC462 /* GlobalDataManager.m */; };
+		57E944D71B20A6EA00FDC462 /* Commonutil.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E944D31B20A6EA00FDC462 /* Commonutil.m */; };
 		57EF537A1B1DF68700575688 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 57EF53791B1DF68700575688 /* main.m */; };
 		57EF537D1B1DF68700575688 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 57EF537C1B1DF68700575688 /* AppDelegate.m */; };
 		57EF53801B1DF68700575688 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57EF537F1B1DF68700575688 /* ViewController.m */; };
@@ -27,6 +36,22 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		57E944BD1B20A69800FDC462 /* DwfmsSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DwfmsSegue.m; sourceTree = "<group>"; };
+		57E944BE1B20A69800FDC462 /* DwfmsSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DwfmsSegue.h; sourceTree = "<group>"; };
+		57E944BF1B20A69800FDC462 /* CameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraViewController.m; sourceTree = "<group>"; };
+		57E944C01B20A69800FDC462 /* CameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
+		57E944C41B20A6BC00FDC462 /* QRCodeScanLine@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "QRCodeScanLine@2x.png"; sourceTree = "<group>"; };
+		57E944C51B20A6BC00FDC462 /* ZIINQRCodeReaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZIINQRCodeReaderView.h; sourceTree = "<group>"; };
+		57E944C61B20A6BC00FDC462 /* ZIINQRCodeReaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZIINQRCodeReaderView.m; sourceTree = "<group>"; };
+		57E944CA1B20A6CF00FDC462 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		57E944CC1B20A6EA00FDC462 /* CallServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CallServer.h; sourceTree = "<group>"; };
+		57E944CD1B20A6EA00FDC462 /* CallServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CallServer.m; sourceTree = "<group>"; };
+		57E944CE1B20A6EA00FDC462 /* GlobalData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalData.h; sourceTree = "<group>"; };
+		57E944CF1B20A6EA00FDC462 /* GlobalData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlobalData.m; sourceTree = "<group>"; };
+		57E944D01B20A6EA00FDC462 /* GlobalDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalDataManager.h; sourceTree = "<group>"; };
+		57E944D11B20A6EA00FDC462 /* GlobalDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlobalDataManager.m; sourceTree = "<group>"; };
+		57E944D21B20A6EA00FDC462 /* Commonutil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Commonutil.h; sourceTree = "<group>"; };
+		57E944D31B20A6EA00FDC462 /* Commonutil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Commonutil.m; sourceTree = "<group>"; };
 		57EF53741B1DF68700575688 /* DWFMS_MEMBER.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DWFMS_MEMBER.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57EF53781B1DF68700575688 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		57EF53791B1DF68700575688 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -60,6 +85,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		57E944C31B20A6AE00FDC462 /* ZIINQRCodeReadView */ = {
+			isa = PBXGroup;
+			children = (
+				57E944C41B20A6BC00FDC462 /* QRCodeScanLine@2x.png */,
+				57E944C51B20A6BC00FDC462 /* ZIINQRCodeReaderView.h */,
+				57E944C61B20A6BC00FDC462 /* ZIINQRCodeReaderView.m */,
+			);
+			name = ZIINQRCodeReadView;
+			sourceTree = "<group>";
+		};
+		57E944C91B20A6C400FDC462 /* image */ = {
+			isa = PBXGroup;
+			children = (
+				57E944CA1B20A6CF00FDC462 /* Icon.png */,
+			);
+			name = image;
+			sourceTree = "<group>";
+		};
 		57EF536B1B1DF68700575688 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +124,12 @@
 		57EF53761B1DF68700575688 /* DWFMS_MEMBER */ = {
 			isa = PBXGroup;
 			children = (
+				57E944BD1B20A69800FDC462 /* DwfmsSegue.m */,
+				57E944BE1B20A69800FDC462 /* DwfmsSegue.h */,
+				57E944BF1B20A69800FDC462 /* CameraViewController.m */,
+				57E944C01B20A69800FDC462 /* CameraViewController.h */,
+				57E944C31B20A6AE00FDC462 /* ZIINQRCodeReadView */,
+				57E944C91B20A6C400FDC462 /* image */,
 				57EF537B1B1DF68700575688 /* AppDelegate.h */,
 				57EF537C1B1DF68700575688 /* AppDelegate.m */,
 				57EF537E1B1DF68700575688 /* ViewController.h */,
@@ -88,6 +137,14 @@
 				57EF53811B1DF68700575688 /* Main.storyboard */,
 				57EF53841B1DF68700575688 /* Images.xcassets */,
 				57EF53861B1DF68700575688 /* LaunchScreen.xib */,
+				57E944CC1B20A6EA00FDC462 /* CallServer.h */,
+				57E944CD1B20A6EA00FDC462 /* CallServer.m */,
+				57E944CE1B20A6EA00FDC462 /* GlobalData.h */,
+				57E944CF1B20A6EA00FDC462 /* GlobalData.m */,
+				57E944D01B20A6EA00FDC462 /* GlobalDataManager.h */,
+				57E944D11B20A6EA00FDC462 /* GlobalDataManager.m */,
+				57E944D21B20A6EA00FDC462 /* Commonutil.h */,
+				57E944D31B20A6EA00FDC462 /* Commonutil.m */,
 				57EF53771B1DF68700575688 /* Supporting Files */,
 			);
 			path = DWFMS_MEMBER;
@@ -200,6 +257,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				57EF53831B1DF68700575688 /* Main.storyboard in Resources */,
+				57E944C71B20A6BC00FDC462 /* QRCodeScanLine@2x.png in Resources */,
+				57E944CB1B20A6CF00FDC462 /* Icon.png in Resources */,
 				57EF53881B1DF68700575688 /* LaunchScreen.xib in Resources */,
 				57EF53851B1DF68700575688 /* Images.xcassets in Resources */,
 			);
@@ -219,7 +278,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57E944D71B20A6EA00FDC462 /* Commonutil.m in Sources */,
+				57E944C21B20A69800FDC462 /* CameraViewController.m in Sources */,
+				57E944D41B20A6EA00FDC462 /* CallServer.m in Sources */,
+				57E944D51B20A6EA00FDC462 /* GlobalData.m in Sources */,
+				57E944C81B20A6BC00FDC462 /* ZIINQRCodeReaderView.m in Sources */,
 				57EF53801B1DF68700575688 /* ViewController.m in Sources */,
+				57E944D61B20A6EA00FDC462 /* GlobalDataManager.m in Sources */,
+				57E944C11B20A69800FDC462 /* DwfmsSegue.m in Sources */,
 				57EF537D1B1DF68700575688 /* AppDelegate.m in Sources */,
 				57EF537A1B1DF68700575688 /* main.m in Sources */,
 			);
@@ -348,6 +414,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = DWFMS_MEMBER/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -358,6 +425,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = DWFMS_MEMBER/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -416,6 +484,7 @@
 				57EF53991B1DF68800575688 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		57EF539A1B1DF68800575688 /* Build configuration list for PBXNativeTarget "DWFMS_MEMBERTests" */ = {
 			isa = XCConfigurationList;
@@ -424,6 +493,7 @@
 				57EF539C1B1DF68800575688 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
