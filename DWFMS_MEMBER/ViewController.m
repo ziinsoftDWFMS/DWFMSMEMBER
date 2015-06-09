@@ -353,7 +353,7 @@ NSString *viewType =@"LOGOUT";
             
             //R 수신
             
-            NSString* str = [res stringWithUrl:@"registGCM.do" VAL:param];
+            NSString* str = [res stringWithUrl:@"registMemGCM.do" VAL:param];
             
             NSString *server = @"http://211.253.9.3:8080/";
             NSString *pageUrl = @"requester.do";
