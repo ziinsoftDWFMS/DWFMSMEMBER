@@ -30,27 +30,51 @@
     }
     
     if(launchOptions){
-        UITextView *txtView = nil ;
-        //
-        txtView = [[UITextView alloc] initWithFrame:CGRectMake(0.0, 0.0, 250.0, 250.0)];
-        [txtView setBackgroundColor:[UIColor clearColor]];
-        [txtView setTextAlignment:NSTextAlignmentLeft] ;
-        [txtView setEditable:NO];
-        [txtView setFont:[UIFont fontWithName:@"Avenir-Black" size:13]];
-        [txtView setText:@"테스트합니다. \n어떻게 나오는지 확인하겠습니다.\n 이렇게 나오면 될까요?\n 확인부탁드립니다.\n 하지만 알러트창 제목부분을 어떻게 해야할지요. \n 흠 잘모르겠습니다."];
+        CallServer *res = [CallServer alloc];
+        UIDevice *device = [UIDevice currentDevice];
+        NSString* idForVendor = [device.identifierForVendor UUIDString];
         
-        UIAlertView *alert = [[UIAlertView alloc] initWithFrame:CGRectMake(0, 0, 300, 550)];
         
-        alert.title = @"Textview";
-        alert.message = @"";
-        alert.delegate = self;
+        NSMutableDictionary* param = [[NSMutableDictionary alloc] init];
         
-        [alert addButtonWithTitle:@"Cancel"];
-        [alert addButtonWithTitle:@"OK"];
-        alert.tag=101;
-        [alert setValue:txtView forKey:@"accessoryView"];
-        //[alert addSubview:txtView];
-        [alert show] ;
+        [param setValue:idForVendor forKey:@"HP_TEL"];
+        [param setValue:@"ffffffff" forKey:@"GCM_ID"];
+        [param setObject:@"I" forKey:@"DEVICE_FLAG"];
+        //R 수신
+        
+        NSString* str = [res stringWithUrl:@"memLoginByPhon.do" VAL:param];
+        
+        NSData *jsonData = [str dataUsingEncoding:NSUTF8StringEncoding];
+        NSError *error;
+        NSDictionary *jsonInfo = [NSJSONSerialization JSONObjectWithData:jsonData options:kNilOptions error:&error];
+        NSLog(str);
+        /*
+         자동로그인 부분
+         */
+        if(     [@"s"isEqual:[jsonInfo valueForKey:@"rv"] ] )
+        {
+            if(     [@"Y"isEqual:[jsonInfo valueForKey:@"result"] ] )
+            {
+                NSDictionary *data = [jsonInfo valueForKey:(@"data")];
+                [GlobalDataManager initgData:(data)];
+            }
+        }
+        
+        param = [[NSMutableDictionary alloc] init];
+        
+        [param setValue:idForVendor forKey:@"hp_tel"];
+        
+        //deviceIdb
+        
+        //R 수신
+        
+        str = [res stringWithUrl:@"searchPushMsg.do" VAL:param];
+        
+        
+        NSLog(@"gcmmessage %@ ",str);
+        
+        [self  rcvAspnA:str];
+
     }
     
     
@@ -103,7 +127,7 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
     
     //R 수신
     
-    NSString* str = [res stringWithUrl:@"registGCM.do" VAL:param];
+    NSString* str = [res stringWithUrl:@"registMemGCM.do" VAL:param];
     
     NSLog(@"APNS Device Tok: %@", app.DEVICE_TOK);
 }
@@ -143,23 +167,8 @@ didReceiveRemoteNotification:(NSDictionary *)userInfo
     NSString* str = [res stringWithUrl:@"searchPushMsg.do" VAL:param];
     
     NSLog(@"gcmmessage %@ ",str);
-    
-    NSData *jsonData = [str dataUsingEncoding:NSUTF8StringEncoding];
-    NSError *error;
-    NSDictionary *jsonInfo = [NSJSONSerialization JSONObjectWithData:jsonData options:kNilOptions error:&error];
-    
-    UIAlertView *alert = [[UIAlertView alloc] initWithFrame:CGRectMake(0, 0, 300, 550)];
-    
-    alert.title = @"A/S처리결과";
-    alert.message = [jsonInfo valueForKey:@"TITLE"];
-    alert.delegate = self;
-    
-    [alert addButtonWithTitle:@"취소"];
-    [alert addButtonWithTitle:@"확인"];
-    alert.tag=101;
-    //[alert addSubview:txtView];
-    [alert show];
-    
+   
+    [[self main] rcvAspn:str];
     [[UIApplication sharedApplication] setApplicationIconBadgeNumber: 1];
     [[UIApplication sharedApplication] setApplicationIconBadgeNumber: 0];
     [[UIApplication sharedApplication] cancelAllLocalNotifications];
@@ -173,7 +182,23 @@ didReceiveRemoteNotification:(NSDictionary *)userInfo
     {
         if(buttonIndex ==1)
         {
+            CallServer *res = [CallServer alloc];
+            UIDevice *device = [UIDevice currentDevice];
+            NSString* idForVendor = [device.identifierForVendor UUIDString];
             
+            
+            NSMutableDictionary* param = [[NSMutableDictionary alloc] init];
+            
+            [param setValue:idForVendor forKey:@"hp_tel"];
+            
+            //deviceId
+            
+            //R 수신
+            
+            NSString* str = [res stringWithUrl:@"searchPushMsg.do" VAL:param];
+            
+            NSLog(@"gcmmessage %@ ",str);
+            [[self main] rcvAspn:str];
         }else{
             
         }
@@ -187,7 +212,6 @@ didReceiveRemoteNotification:(NSDictionary *)userInfo
             NSMutableDictionary* param = [GlobalDataManager getAllData];
             
             
-            
             NSString* str = [res stringWithUrl:@"invInfo.do" VAL:param];
         }else{
             exit(0);
@@ -195,6 +219,30 @@ didReceiveRemoteNotification:(NSDictionary *)userInfo
     }
     
     
+}
+
+- (void) rcvAspnA:(NSString*) jsonstring {
+    NSLog(@"nslog");
+    NSData *jsonData = [jsonstring dataUsingEncoding:NSUTF8StringEncoding];
+    NSError *error;
+    NSDictionary *jsonInfo = [NSJSONSerialization JSONObjectWithData:jsonData options:kNilOptions error:&error];
+    
+   
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithFrame:CGRectMake(0, 0, 300, 550)];
+        
+        alert.title = @"A/S작업결과";
+        alert.message = [jsonInfo valueForKey:@"TITLE"];
+        alert.delegate = self;
+        
+        [alert addButtonWithTitle:@"취소"];
+        [alert addButtonWithTitle:@"확인"];
+        alert.tag=101;
+        //[alert addSubview:txtView];
+        [alert show] ;
+        
+    
+   
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

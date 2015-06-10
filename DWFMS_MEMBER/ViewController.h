@@ -9,13 +9,17 @@
 #import <UIKit/UIKit.h>
 #import "ZIINQRCodeReaderView.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController{
+    NSString *FLAG;
+    NSString *JSONPARAM;
+}
 
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 @property (weak, nonatomic) IBOutlet ZIINQRCodeReaderView *qrView;
 
 - (void) setimage:(NSString*) path num:(NSString*)num;
 - (void) setQRcode:(NSString*) data ;
+- (void) rcvAspn:(NSString*) jsonstring ;
 @end
 
 @interface UIWebView(JavaScriptAlert)
