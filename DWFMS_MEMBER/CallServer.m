@@ -17,7 +17,7 @@
 - (void) test:(NSString*) url{
     
     
-    NSString *serverUrl = [NSString stringWithFormat:@"http://211.253.9.3:8080/%@",url] ;
+    NSString *serverUrl = [NSString stringWithFormat:@"%@/%@",[GlobalData getServerIp],url] ;
     
     NSLog(@"callserver %@",serverUrl);
     

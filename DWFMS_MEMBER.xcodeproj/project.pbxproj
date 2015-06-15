@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5746FFFB1B2DAC4C0079C385 /* ToastAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5746FFFA1B2DAC4C0079C385 /* ToastAlertView.m */; };
 		57A8D3D71B259D0300A46ED1 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57A8D3D61B259D0300A46ED1 /* AudioToolbox.framework */; };
 		57A8D3DA1B259D1D00A46ED1 /* 1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 57A8D3D91B259D1D00A46ED1 /* 1.wav */; };
 		57E944C11B20A69800FDC462 /* DwfmsSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E944BD1B20A69800FDC462 /* DwfmsSegue.m */; };
@@ -38,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5746FFF91B2DAC4C0079C385 /* ToastAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToastAlertView.h; sourceTree = "<group>"; };
+		5746FFFA1B2DAC4C0079C385 /* ToastAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToastAlertView.m; sourceTree = "<group>"; };
 		57A8D3D61B259D0300A46ED1 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		57A8D3D91B259D1D00A46ED1 /* 1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 1.wav; sourceTree = "<group>"; };
 		57E944BD1B20A69800FDC462 /* DwfmsSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DwfmsSegue.m; sourceTree = "<group>"; };
@@ -160,6 +163,8 @@
 				57E944D11B20A6EA00FDC462 /* GlobalDataManager.m */,
 				57E944D21B20A6EA00FDC462 /* Commonutil.h */,
 				57E944D31B20A6EA00FDC462 /* Commonutil.m */,
+				5746FFF91B2DAC4C0079C385 /* ToastAlertView.h */,
+				5746FFFA1B2DAC4C0079C385 /* ToastAlertView.m */,
 				57EF53771B1DF68700575688 /* Supporting Files */,
 			);
 			path = DWFMS_MEMBER;
@@ -301,6 +306,7 @@
 				57E944C81B20A6BC00FDC462 /* ZIINQRCodeReaderView.m in Sources */,
 				57EF53801B1DF68700575688 /* ViewController.m in Sources */,
 				57E944D61B20A6EA00FDC462 /* GlobalDataManager.m in Sources */,
+				5746FFFB1B2DAC4C0079C385 /* ToastAlertView.m in Sources */,
 				57E944C11B20A69800FDC462 /* DwfmsSegue.m in Sources */,
 				57EF537D1B1DF68700575688 /* AppDelegate.m in Sources */,
 				57EF537A1B1DF68700575688 /* main.m in Sources */,

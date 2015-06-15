@@ -13,7 +13,7 @@
 #import "Commonutil.h"
 #import "ZIINQRCodeReaderView.h"
 #import "AppDelegate.h"
-
+#import "ToastAlertView.h"
 @interface ViewController ()
 
 @end
@@ -54,8 +54,8 @@ NSString *viewType =@"LOGOUT";
     NSLog(str);
     
     NSString *urlParam=@"";
-    NSString *server = @"http://211.253.9.3:8080/";
-    NSString *pageUrl = @"requester.do";
+    NSString *server = [GlobalData getServerIp];
+    NSString *pageUrl = @"/requester.do";
     NSString *callUrl = @"";
     /*
      자동로그인 부분
@@ -312,8 +312,8 @@ NSString *viewType =@"LOGOUT";
             
             NSString* str = [res stringWithUrl:@"registMemGCM.do" VAL:param];
             
-            NSString *server = @"http://211.253.9.3:8080/";
-            NSString *pageUrl = @"requester.do";
+            NSString *server = [GlobalData getServerIp];
+            NSString *pageUrl = @"/requester.do";
             NSString *callUrl = @"";
             
             
@@ -327,7 +327,7 @@ NSString *viewType =@"LOGOUT";
             [self.webView loadRequest:requestURL];
             
         }else{
-            
+            [ToastAlertView showToastInParentView:self.view withText:@"아이디와 패스워드를 확인해주세요." withDuaration:5.0];
         }
     }else{
         
@@ -431,8 +431,8 @@ NSString *viewType =@"LOGOUT";
 
 -(void) logout{
     viewType = @"LOGOUT";
-    NSString *server = @"http://211.253.9.3:8080/";
-    NSString *pageUrl = @"requester.do";
+    NSString *server = [GlobalData getServerIp];
+    NSString *pageUrl = @"/requester.do";
     NSString *callUrl = @"";
     
     callUrl = [NSString stringWithFormat:@"%@%@",server,pageUrl];
