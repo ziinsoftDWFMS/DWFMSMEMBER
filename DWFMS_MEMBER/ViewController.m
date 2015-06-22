@@ -431,16 +431,24 @@ NSString *viewType =@"LOGOUT";
 
 -(void) logout{
     viewType = @"LOGOUT";
+    viewType = @"LOGOUT";
+    UIDevice *device = [UIDevice currentDevice];
+    NSString* idForVendor = [device.identifierForVendor UUIDString];
     NSString *server = [GlobalData getServerIp];
     NSString *pageUrl = @"/requester.do";
     NSString *callUrl = @"";
+    NSString * urlParam = [NSString stringWithFormat:@"HP_TEL=%@&GCM_ID=%@&DEVICE_FLAG=I",idForVendor,@"22222222"];
+    
+    
+    
     
     callUrl = [NSString stringWithFormat:@"%@%@",server,pageUrl];
     
     NSURL *url=[NSURL URLWithString:callUrl];
     NSMutableURLRequest *requestURL=[[NSMutableURLRequest alloc]initWithURL:url];
+    [requestURL setHTTPMethod:@"POST"];
+    [requestURL setHTTPBody:[urlParam dataUsingEncoding:NSUTF8StringEncoding]];
     [self.webView loadRequest:requestURL];
-    
 }
 -(void)callbackwelcome{
     if([viewType isEqualToString:@"LOGOUT"]){
