@@ -150,7 +150,7 @@ didReceiveRemoteNotification:(NSDictionary *)userInfo
         
     }
     
-    application.applicationIconBadgeNumber = 0;
+    //application.applicationIconBadgeNumber = 0;
     CallServer *res = [CallServer alloc];
     UIDevice *device = [UIDevice currentDevice];
     NSString* idForVendor = [device.identifierForVendor UUIDString];
@@ -169,9 +169,9 @@ didReceiveRemoteNotification:(NSDictionary *)userInfo
     NSLog(@"gcmmessage %@ ",str);
    
     [[self main] rcvAspn:str];
-    [[UIApplication sharedApplication] setApplicationIconBadgeNumber: 1];
-    [[UIApplication sharedApplication] setApplicationIconBadgeNumber: 0];
-    [[UIApplication sharedApplication] cancelAllLocalNotifications];
+    //[[UIApplication sharedApplication] setApplicationIconBadgeNumber: 1];
+    //[[UIApplication sharedApplication] setApplicationIconBadgeNumber: 0];
+    //[[UIApplication sharedApplication] cancelAllLocalNotifications];
 }
 
 //개인정보동의 alert 창 callback
