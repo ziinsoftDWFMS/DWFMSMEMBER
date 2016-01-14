@@ -10,7 +10,7 @@
 #import <AudioToolbox/AudioToolbox.h>
 #import "ViewController.h"
 #import "CameraViewController.h"
-
+#import <CoreLocation/CoreLocation.h>
 
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>{
@@ -32,6 +32,9 @@
 @property (weak, nonatomic) ViewController * main;
 @property (weak, nonatomic) CameraViewController * camera;
 
+
+@property (strong, nonatomic) CLLocationManager *locationManager;
+@property CLProximity lastProximity;
 
 @end
 

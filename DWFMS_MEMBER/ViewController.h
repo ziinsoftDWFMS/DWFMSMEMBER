@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "ZIINQRCodeReaderView.h"
+#import <CoreBluetooth/CoreBluetooth.h>
+#import <CoreLocation/CoreLocation.h>
 
-@interface ViewController : UIViewController{
+@interface ViewController : UIViewController<CBCentralManagerDelegate, CLLocationManagerDelegate>{
     NSString *FLAG;
     NSString *JSONPARAM;
 }
@@ -17,6 +19,13 @@
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 @property (weak, nonatomic) IBOutlet ZIINQRCodeReaderView *qrView;
 
+//@property (weak, nonatomic) IBOutlet UITextField *locationTxt;
+@property (strong) NSArray *beacons;
+@property (nonatomic, strong) CBCentralManager* blueToothManager;
+@property (strong, nonatomic) CLLocationManager *locationManager;
+@property CLProximity lastProximity;
+
+- (void) beaconSet;
 - (void) setimage:(NSString*) path num:(NSString*)num;
 - (void) setQRcode:(NSString*) data ;
 - (void) rcvAspn:(NSString*) jsonstring ;

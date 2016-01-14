@@ -18,4 +18,13 @@
 +(NSString*) getHomedir{
     return homedir;
 }
+
++(void) setbeacon:(NSString*) tfvalue{
+    beaconTF = tfvalue;
+}
+
+
++(NSString*) getbeacon{
+    return beaconTF;
+}
 @end

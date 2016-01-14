@@ -10,11 +10,17 @@
 #import "CallServer.h"
 #import "GlobalData.h"
 #import "GlobalDataManager.h"
+#import "Commonutil.h"
+#import <CoreLocation/CoreLocation.h>
+#import "ToastAlertView.h"
 @interface AppDelegate ()
 
 @end
 
-@implementation AppDelegate
+@implementation AppDelegate{
+    NSArray *_uuidList;
+    BOOL isInside;
+}
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -57,6 +63,58 @@
             {
                 NSDictionary *data = [jsonInfo valueForKey:(@"data")];
                 [GlobalDataManager initgData:(data)];
+            
+                _uuidList = @[
+                              [[NSUUID alloc] initWithUUIDString:[data valueForKey:@"BEACON_UUID"]]
+                              //24DDF411-8CF1-440C-87CD-E368DAF9C93E
+                              // you can add other NSUUID instance here.
+                              ];
+                
+                
+                for (int i = 0; i < [_uuidList count]; i++) {
+                    NSLog(@"_uuidList  ");
+                    
+                    
+                    /*********
+                     NSUUID *uuid = [_uuidList objectAtIndex:i];
+                     
+                     NSUUID *beaconUUID = [[NSUUID alloc] initWithUUIDString:@"24DDF411-8CF1-440C-87CD-E368DAF9C93E"];
+                     NSString *regionIdentifier = @"us.iBeaconModules";
+                     CLBeaconRegion *beaconRegion = [[CLBeaconRegion alloc] initWithProximityUUID:beaconUUID identifier:regionIdentifier];
+                     switch ([CLLocationManager authorizationStatus]) {
+                     case kCLAuthorizationStatusAuthorizedAlways:
+                     NSLog(@"Authorized Always");
+                     break;
+                     case kCLAuthorizationStatusAuthorizedWhenInUse:
+                     NSLog(@"Authorized when in use");
+                     break;
+                     case kCLAuthorizationStatusDenied:
+                     NSLog(@"Denied");
+                     break;
+                     case kCLAuthorizationStatusNotDetermined:
+                     NSLog(@"Not determined");
+                     break;
+                     case kCLAuthorizationStatusRestricted:
+                     NSLog(@"Restricted");
+                     break;
+                     
+                     default:
+                     break;
+                     }
+                     self.locationManager = [[CLLocationManager alloc] init];
+                     if([self.locationManager respondsToSelector:@selector(requestAlwaysAuthorization)]) {
+                     [self.locationManager requestAlwaysAuthorization];
+                     }
+                     self.locationManager.distanceFilter = YES;
+                     
+                     self.locationManager.delegate = self;
+                     self.locationManager.pausesLocationUpdatesAutomatically = NO;//pause상태에서의 스캔여부
+                     [self.locationManager startMonitoringForRegion:beaconRegion];
+                     [self.locationManager startRangingBeaconsInRegion:beaconRegion];
+                     [self.locationManager startUpdatingLocation];
+                     *******/
+                }
+                
             }
         }
         

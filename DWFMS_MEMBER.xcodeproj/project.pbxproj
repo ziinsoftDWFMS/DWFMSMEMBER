@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		5746FFFB1B2DAC4C0079C385 /* ToastAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5746FFFA1B2DAC4C0079C385 /* ToastAlertView.m */; };
-		57A8D3D71B259D0300A46ED1 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57A8D3D61B259D0300A46ED1 /* AudioToolbox.framework */; };
 		57A8D3DA1B259D1D00A46ED1 /* 1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 57A8D3D91B259D1D00A46ED1 /* 1.wav */; };
 		57E944C11B20A69800FDC462 /* DwfmsSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E944BD1B20A69800FDC462 /* DwfmsSegue.m */; };
 		57E944C21B20A69800FDC462 /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E944BF1B20A69800FDC462 /* CameraViewController.m */; };
@@ -26,6 +25,13 @@
 		57EF53851B1DF68700575688 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57EF53841B1DF68700575688 /* Images.xcassets */; };
 		57EF53881B1DF68700575688 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57EF53861B1DF68700575688 /* LaunchScreen.xib */; };
 		57EF53941B1DF68800575688 /* DWFMS_MEMBERTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 57EF53931B1DF68800575688 /* DWFMS_MEMBERTests.m */; };
+		97B13C1C1C460AD3001F544C /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97B13C1B1C460AD3001F544C /* AudioToolbox.framework */; };
+		97B13C1E1C460AED001F544C /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97B13C1D1C460AED001F544C /* CoreBluetooth.framework */; };
+		97B13C201C460AF5001F544C /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97B13C1F1C460AF5001F544C /* CoreLocation.framework */; };
+		97B13C221C460B00001F544C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97B13C211C460B00001F544C /* SystemConfiguration.framework */; };
+		97B13C241C460B08001F544C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97B13C231C460B08001F544C /* UIKit.framework */; };
+		97B13C261C460B16001F544C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97B13C251C460B16001F544C /* Foundation.framework */; };
+		97B13C281C460B22001F544C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97B13C271C460B22001F544C /* CoreGraphics.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,7 +47,6 @@
 /* Begin PBXFileReference section */
 		5746FFF91B2DAC4C0079C385 /* ToastAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToastAlertView.h; sourceTree = "<group>"; };
 		5746FFFA1B2DAC4C0079C385 /* ToastAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToastAlertView.m; sourceTree = "<group>"; };
-		57A8D3D61B259D0300A46ED1 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		57A8D3D91B259D1D00A46ED1 /* 1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 1.wav; sourceTree = "<group>"; };
 		57E944BD1B20A69800FDC462 /* DwfmsSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DwfmsSegue.m; sourceTree = "<group>"; };
 		57E944BE1B20A69800FDC462 /* DwfmsSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DwfmsSegue.h; sourceTree = "<group>"; };
@@ -72,6 +77,13 @@
 		57EF538D1B1DF68800575688 /* DWFMS_MEMBERTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DWFMS_MEMBERTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		57EF53921B1DF68800575688 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		57EF53931B1DF68800575688 /* DWFMS_MEMBERTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DWFMS_MEMBERTests.m; sourceTree = "<group>"; };
+		97B13C1B1C460AD3001F544C /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		97B13C1D1C460AED001F544C /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		97B13C1F1C460AF5001F544C /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		97B13C211C460B00001F544C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		97B13C231C460B08001F544C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		97B13C251C460B16001F544C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		97B13C271C460B22001F544C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,7 +91,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				57A8D3D71B259D0300A46ED1 /* AudioToolbox.framework in Frameworks */,
+				97B13C1E1C460AED001F544C /* CoreBluetooth.framework in Frameworks */,
+				97B13C201C460AF5001F544C /* CoreLocation.framework in Frameworks */,
+				97B13C221C460B00001F544C /* SystemConfiguration.framework in Frameworks */,
+				97B13C241C460B08001F544C /* UIKit.framework in Frameworks */,
+				97B13C261C460B16001F544C /* Foundation.framework in Frameworks */,
+				97B13C281C460B22001F544C /* CoreGraphics.framework in Frameworks */,
+				97B13C1C1C460AD3001F544C /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -122,7 +140,13 @@
 		57EF536B1B1DF68700575688 = {
 			isa = PBXGroup;
 			children = (
-				57A8D3D61B259D0300A46ED1 /* AudioToolbox.framework */,
+				97B13C271C460B22001F544C /* CoreGraphics.framework */,
+				97B13C251C460B16001F544C /* Foundation.framework */,
+				97B13C231C460B08001F544C /* UIKit.framework */,
+				97B13C211C460B00001F544C /* SystemConfiguration.framework */,
+				97B13C1F1C460AF5001F544C /* CoreLocation.framework */,
+				97B13C1D1C460AED001F544C /* CoreBluetooth.framework */,
+				97B13C1B1C460AD3001F544C /* AudioToolbox.framework */,
 				57EF53761B1DF68700575688 /* DWFMS_MEMBER */,
 				57EF53901B1DF68800575688 /* DWFMS_MEMBERTests */,
 				57EF53751B1DF68700575688 /* Products */,
