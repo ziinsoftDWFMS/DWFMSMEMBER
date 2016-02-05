@@ -29,6 +29,8 @@ NSString *bluetoothYN = @"N";
 NSString *senderinfo = @"";
 NSString *titleinfo = @"";
 NSString *EmcCode = @"";
+NSString *beaconKey = @"";
+
 NSString *viewType =@"LOGOUT";
 NSMutableArray *beaconDistanceList;//Using the Beacon Value set set set~~~
 NSMutableArray *beaconList;
@@ -659,7 +661,25 @@ NSString* idForVendor;
         [ToastAlertView showToastInParentView:self.view withText:@"전송이 완료되었습니다." withDuaration:3.0];
         
         
-        //조치가이드로 세팅하면 됨......
+        NSString* callActionGuide = @"";
+        
+        if (![@"EM01" isEqual:EmcCode]) {
+            NSMutableDictionary *sessiondata =[GlobalDataManager getAllData];
+            
+            callActionGuide = [NSString stringWithFormat:@"%@/emcActionGuide.do?COMP_CD=%@&CODE=%@&BEACON_KEY=%@", [GlobalData getServerIp], [sessiondata valueForKey:@"session_COMP_CD"], EmcCode, beaconKey];
+        } else {
+            callActionGuide = [NSString stringWithFormat:@"%@/#home", [GlobalData getServerIp]];
+            
+        }
+        
+        NSString *urlParam=@"";
+        NSURL *url=[NSURL URLWithString:callActionGuide];
+        NSMutableURLRequest *requestURL=[[NSMutableURLRequest alloc]initWithURL:url];
+        [requestURL setHTTPMethod:@"POST"];
+        [requestURL setHTTPBody:[urlParam dataUsingEncoding:NSUTF8StringEncoding]];
+        [self.webView loadRequest:requestURL];
+        
+        NSLog(@"??????? urlParam %@",callActionGuide);
         
     }
     
@@ -1005,10 +1025,14 @@ NSString* idForVendor;
     NSString *nearBeacon = [self getNearBeacon];
     
     if (![@"" isEqual:nearBeacon]) {
+        beaconKey = [NSString stringWithFormat:@"%@", nearBeacon];;
+        
+        NSMutableDictionary *sessiondata =[GlobalDataManager getAllData];
+        
         NSMutableDictionary* param = [[NSMutableDictionary alloc] init];
         
         [param setValue:nearBeacon forKey:@"BEACON_KEY"];
-        
+        [param setValue:[sessiondata valueForKey:@"session_COMP_CD"] forKey:@"COMP_CD"];
         //R 수신
         CallServer *res = [CallServer alloc];
         NSString* str = [res stringWithUrl:@"getLocationName.do" VAL:param];

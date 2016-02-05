@@ -62,14 +62,26 @@
 -(void) open
 {
     getImage = NO;
-    UIActionSheet *actionsheet = [[UIActionSheet alloc]
-                                  initWithTitle:nil
-                                  delegate:self
-                                  cancelButtonTitle:@"취소"
-                                  destructiveButtonTitle:nil
-                                  otherButtonTitles:@"사진 촬영", @"앨범에서 가져오기", nil];
     
-    [actionsheet showInView:self.view];
+    /**************************************************/
+    UIImagePickerController *imagepickerController = [[UIImagePickerController alloc] init];
+    [imagepickerController setDelegate:self];
+    [imagepickerController setAllowsEditing:YES];
+    //카메라 자동 호출
+    [imagepickerController setSourceType:UIImagePickerControllerSourceTypeCamera];
+    [self presentModalViewController:imagepickerController animated:YES];
+    /**************************************************/
+    
+    /**************************************************
+     UIActionSheet *actionsheet = [[UIActionSheet alloc]
+     initWithTitle:nil
+     delegate:self
+     cancelButtonTitle:@"취소"
+     destructiveButtonTitle:nil
+     otherButtonTitles:@"사진 촬영", @"앨범에서 가져오기", nil];
+     
+     [actionsheet showInView:self.view];
+     **************************************************/
     
 }
 #pragma mark UIActionSheet Delegate
@@ -131,13 +143,18 @@
          NSLog(@" 33 %@ ",(getImage ? @"YES" : @"NO"));
         
         
-        UIActionSheet *isSave = [[UIActionSheet alloc]
-                                      initWithTitle:nil
-                                      delegate:self
-                                      cancelButtonTitle:@"저장 안함"
-                                      destructiveButtonTitle:nil
-                                      otherButtonTitles:@"사진 저장", nil];
-        [isSave showInView:self.view];
+        /**************************************************/
+        [self fileUp];
+        /**************************************************/
+        /**************************************************
+         UIActionSheet *isSave = [[UIActionSheet alloc]
+         initWithTitle:nil
+         delegate:self
+         cancelButtonTitle:@"저장 안함"
+         destructiveButtonTitle:nil
+         otherButtonTitles:@"사진 저장", nil];
+         [isSave showInView:self.view];
+         **************************************************/
     }
     else{
         [self fileUp];
