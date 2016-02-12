@@ -645,6 +645,7 @@ NSString* idForVendor;
     [param setValue:strCOMPANY_NM forKey:@"dept_nm"];
     [param setValue:beaconKey forKey:@"beacon_key"];
     
+    
     //deviceId
     
     //R 수신
