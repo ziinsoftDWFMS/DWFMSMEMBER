@@ -643,6 +643,7 @@ NSString* idForVendor;
     [param setValue:strCOMPANY_NM forKey:@"company_nm"];
     [param setValue:@"ipjusa" forKey:@"dept_cd"];
     [param setValue:strCOMPANY_NM forKey:@"dept_nm"];
+    [param setValue:beaconKey forKey:@"beacon_key"];
     
     //deviceId
     
