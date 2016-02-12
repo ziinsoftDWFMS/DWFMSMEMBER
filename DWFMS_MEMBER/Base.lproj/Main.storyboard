@@ -27,7 +27,7 @@
                                     <offsetWrapper key="textShadowOffset" horizontal="100" vertical="0.0"/>
                                 </textAttributes>
                                 <items>
-                                    <navigationItem title="UBIS Master" id="6Qo-hd-tO8"/>
+                                    <navigationItem title="UBIS AS" id="6Qo-hd-tO8"/>
                                 </items>
                             </navigationBar>
                             <webView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="guR-sw-pqW">

@@ -663,7 +663,7 @@ NSString* idForVendor;
         [ToastAlertView showToastInParentView:self.view withText:@"전송이 완료되었습니다." withDuaration:3.0];
         
         
-        NSString* callActionGuide = @"";
+        NSString* callActionGuide = @"reqeuster.do#home";
         
         if (![@"EM01" isEqual:EmcCode]) {
             NSMutableDictionary *sessiondata =[GlobalDataManager getAllData];
