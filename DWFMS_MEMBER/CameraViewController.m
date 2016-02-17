@@ -37,13 +37,9 @@
     replaceWord = @"";
     makeFilename =  [makeFilename stringByReplacingOccurrencesOfString:searchWord withString:replaceWord];
     
-    searchWord = @"'";
-    replaceWord = @"";
-    makeFilename =  [makeFilename stringByReplacingOccurrencesOfString:searchWord withString:replaceWord];
-    
     NSLog(@"filename %@",makeFilename);
-//    filepath = [NSString stringWithFormat:@"resources/App_Company/%@/%@.jpg",[[GlobalDataManager getgData] compCd],[cData valueForKey:@"type"],filename];
-     filepath = [NSString stringWithFormat:@"resources/App_Company/%@/%@/",[[GlobalDataManager getgData] compCd],[cData valueForKey:@"type"]];
+    //    filepath = [NSString stringWithFormat:@"resources/App_Company/%@/%@.jpg",[[GlobalDataManager getgData] compCd],[cData valueForKey:@"type"],filename];
+    filepath = [NSString stringWithFormat:@"resources/App_Company/%@/%@/",[[GlobalDataManager getgData] compCd],[cData valueForKey:@"type"]];
     num = [cData valueForKey:@"num"];
     
 }
@@ -51,7 +47,9 @@
     [super viewDidAppear:animated];
     NSLog(@" 00 %@ ",(getImage ? @"YES" : @"NO"));
     if(!getImage){
-    self.open;
+        self.open;
+    } else {
+        [self dismissViewControllerAnimated:YES completion:nil];
     }
 }
 -  (void)didReceiveMemoryWarning {
@@ -68,8 +66,10 @@
     [imagepickerController setDelegate:self];
     [imagepickerController setAllowsEditing:YES];
     //카메라 자동 호출
+    /***/
     [imagepickerController setSourceType:UIImagePickerControllerSourceTypeCamera];
     [self presentModalViewController:imagepickerController animated:YES];
+    /***/
     /**************************************************/
     
     /**************************************************
@@ -98,14 +98,14 @@
             [self presentModalViewController:imagepickerController animated:YES];
         }
         else if(buttonIndex == 1){
-            getImage =YES;
+            //getImage =YES;
             [imagepickerController setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
             
             [self presentModalViewController:imagepickerController animated:YES];
         }else{
             [self dismissViewControllerAnimated:YES completion:nil];
         }
- 
+        
     }
     else{
         
@@ -114,12 +114,12 @@
             UIImageWriteToSavedPhotosAlbum([imageView image], self, @selector(saveImage:didFinishedSavingWhithError:contextInfo:),nil);
             
             NSLog(@"?? save??? ");
-          
+            
             
         }
         [self fileUp];
         
-
+        
     }
     
 }
@@ -128,7 +128,7 @@
 - (void)imagePickerController:(UIImagePickerController *)picker
         didFinishPickingImage:(UIImage *)image editingInfo:(NSDictionary *)editingInfo
 {
-     imageView.image = image;
+    imageView.image = image;
     float hi =  image.size.height;
     float wh = image.size.width;
     
@@ -136,12 +136,11 @@
     NSData *dataObj = UIImageJPEGRepresentation(image, 0.3);
     
     NSLog(@"?? size? %d ",dataObj.length);
-     NSLog(@" 22 %@ ",(getImage ? @"YES" : @"NO"));
+    NSLog(@" 22 %@ ",(getImage ? @"YES" : @"NO"));
     [self dismissModalViewControllerAnimated:YES];
     if(!getImage){
         getImage = YES;
-         NSLog(@" 33 %@ ",(getImage ? @"YES" : @"NO"));
-        
+        NSLog(@" 33 %@ ",(getImage ? @"YES" : @"NO"));
         
         /**************************************************/
         [self fileUp];
@@ -174,7 +173,12 @@
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
 {
-    [picker dismissModalViewControllerAnimated:YES];
+    NSLog(@" ~~~~~~~~~~~  image call cancel   !!!!");
+    //[picker dismissModalViewControllerAnimated:NO];
+    //[self dismissModalViewControllerAnimated:NO];
+    //[self dismissViewControllerAnimated:YES completion:nil];
+    getImage = YES;
+    [picker dismissViewControllerAnimated:NO completion:nil];
 }
 
 -(void) fileUp{
@@ -234,9 +238,10 @@
     [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
     
     // set URL
-    NSString *makeUrl = [NSString stringWithFormat:@"%@/resources/filedown.jsp?path=%@",[GlobalData getServerIp],filepath];
+    NSString *makeUrl = [NSString stringWithFormat:@"%@/resources/filedown.jsp?path=%@",ServerIp, filepath];
     NSLog(@"make url = %@",makeUrl);
     [request setURL:[NSURL URLWithString:makeUrl]];
+    //@"http://211.253.9.3:8080/resources/filedown.jsp"]];
     
     // start upload
     NSURLConnection *connection = [NSURLConnection connectionWithRequest:request delegate:self];
@@ -250,10 +255,10 @@
 
 // connection 실행을 맞치고 aalert 메지시장 출력
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
-    NSLog(@"dd123 %@",[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
-     AppDelegate * ad =  [[UIApplication sharedApplication] delegate] ;
+    NSLog(@"dd %@",[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
+    AppDelegate * ad =  (AppDelegate*)[[UIApplication sharedApplication] delegate] ;
     [[ad main]setimage:[NSString stringWithFormat:@"%@%@",filepath,makeFilename] num:num];
-     [self dismissViewControllerAnimated:YES completion:nil];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 

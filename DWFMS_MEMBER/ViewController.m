@@ -668,7 +668,7 @@ NSString* idForVendor;
         if (![@"EM01" isEqual:EmcCode]) {
             NSMutableDictionary *sessiondata =[GlobalDataManager getAllData];
             
-            callActionGuide = [NSString stringWithFormat:@"%@/emcActionGuide.do?COMP_CD=%@&CODE=%@&BEACON_KEY=%@&REDIRECT_URL=requester.do#home", [GlobalData getServerIp], [sessiondata valueForKey:@"session_COMP_CD"], EmcCode, beaconKey];
+            callActionGuide = [NSString stringWithFormat:@"%@/emcActionGuide_member.do?COMP_CD=%@&CODE=%@&BEACON_KEY=%@&REDIRECT_URL=requester.do#home", [GlobalData getServerIp], [sessiondata valueForKey:@"session_COMP_CD"], EmcCode, beaconKey];
         }
         
         NSString *urlParam=@"";
