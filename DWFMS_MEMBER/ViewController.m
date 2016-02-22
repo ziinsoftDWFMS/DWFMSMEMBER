@@ -37,7 +37,7 @@ NSMutableArray *beaconList;
 NSMutableArray *beaconBatteryLevelList;
 int seqBeacon = 0;
 int beaconSkeepCount = 0;
-int beaconSkeepMaxCount = 3;
+int beaconSkeepMaxCount = 1;
 
 CLBeaconRegion *beaconRegion;
 
@@ -493,6 +493,18 @@ NSString* idForVendor;
             viewType = @"LOGIN";
             NSDictionary *sessiondata = [sessionjsonInfo valueForKey:(@"data")];
             [GlobalDataManager initgData:(sessiondata)];
+            
+            [GlobalDataManager initgData:(data)];
+            
+            strUSER_ID = [data valueForKey:@"ID"];
+            strCOMP_CD = [data valueForKey:@"COMP_CD"];
+            strCOMP_NM = [data valueForKey:@"COMP_NM"];
+            strHP = [data valueForKey:@"HP"];
+            strID_NM = [data valueForKey:@"ID_NM"];
+            strCOMPANY_NM = [data valueForKey:@"COMPANY_NM"];
+            
+            beaconYN = [data valueForKey:@"BEACON_YN"];
+            
             
             NSString * text =@"본 어플리케이션은 원할한 서비스를\n제공하기 위해 휴대전화번호등의 개인정보를 사용합니다.\n[개인정보보호법]에 의거해 개인정보 사용에 대한 \n사용자의 동의를 필요로 합니다.\n개인정보 사용에 동의하시겠습니까?\n";
             if(![@"Y" isEqualToString:[sessiondata valueForKey:@"INFO_YN"]])
